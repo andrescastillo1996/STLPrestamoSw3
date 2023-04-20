@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.OneToMany;
 import javax.validation.constraints.*;
 
 
@@ -13,6 +14,7 @@ public class ArticleDTO {
 
     @NotNull
     @NotBlank
+    @OneToMany(name ="Ref")
     private String ref;
 
     @NotNull
