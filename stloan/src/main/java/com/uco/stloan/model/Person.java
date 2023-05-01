@@ -1,6 +1,5 @@
 package com.uco.stloan.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,10 +37,14 @@ public class Person {
     @Column(name = "RFID")
     private String RFID;
 
+
+
+
+
     public Person( ) {
     }
 
-    public Person( String identification, String name, String lastname, String email, String password, String mobile, String address, String rol, String RFID ) {
+    public Person(String identification, String name, String lastname, String email, String password, String mobile, String address, String rol, String RFID ) {
         this.identification = identification;
         this.name = name;
         this.lastname = lastname;
