@@ -1,4 +1,4 @@
-package com.uco.stloan.util.gson;
+package com.uco.stloan.utils.gson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Component
-public class MapperJsonObjetoJackson implements MapperJsonObjeto{
+public class MapperJsonObjetoJackson implements MapperJsonObjeto {
+
     @Override
     public Optional<String> ejecutar(Object objeto) {
         try {
@@ -50,6 +51,5 @@ public class MapperJsonObjetoJackson implements MapperJsonObjeto{
         } catch (Exception e) {
             return Optional.empty();
         }
-    }
     }
 }

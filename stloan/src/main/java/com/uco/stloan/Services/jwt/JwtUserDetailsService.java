@@ -1,12 +1,9 @@
 package com.uco.stloan.Services.jwt;
 
-import com.azure.core.exception.ResourceExistsException;
 import com.uco.stloan.Repository.PersonRepository;
 import com.uco.stloan.exception.ResourceConflict;
-import com.uco.stloan.exception.ResourceNotFound;
 import com.uco.stloan.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

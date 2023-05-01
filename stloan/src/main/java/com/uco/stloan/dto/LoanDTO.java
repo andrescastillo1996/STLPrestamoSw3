@@ -1,17 +1,13 @@
 package com.uco.stloan.dto;
 
-
-import com.uco.stloan.model.Article;
-import com.uco.stloan.model.Person;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 import java.util.Date;
 
 @Getter
@@ -20,32 +16,35 @@ import java.util.Date;
 @NoArgsConstructor
 public class LoanDTO {
 
-    @NotBlank
     @NotNull
-    private Person personUser;
-    @NotBlank
+    @PositiveOrZero
+    private int personUser;
+    //@NotBlank
     @NotNull
-    private Person personMonitor;
+    @PositiveOrZero
+    private int personMonitor;
 
-    @NotBlank
+    //@NotBlank
     @NotNull
-    private Article article;
+    @PositiveOrZero
+    private int article;
 
-    @NotBlank
+    //@NotBlank
     @NotNull
+    @PositiveOrZero
     private int qtyArticle;
 
-    @NotBlank
+    //@NotBlank
     @DateTimeFormat
     @NotNull
     private Date dateStart;
 
-    @NotBlank
+    //@NotBlank
     @DateTimeFormat
     @NotNull
     private Date dateEnd;
 
-    @NotBlank
+    //@NotBlank
     @NotNull
     private Boolean isReturned;
 

@@ -1,9 +1,7 @@
-package com.uco.stloan.Services.Persona;
+package com.uco.stloan.Services.Person;
 
 import com.uco.stloan.Repository.PersonRepository;
-
 import com.uco.stloan.exception.NotFoundEx;
-
 import com.uco.stloan.exception.ResourceNotFound;
 import com.uco.stloan.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +19,7 @@ public class PersonImpl implements PersonService {
 
     @Autowired
     private PersonRepository personRepository;
+
 
 
 
@@ -62,6 +61,7 @@ public class PersonImpl implements PersonService {
             throw new NotFoundEx("RESOURCE_NOT_FOUND");
         }
         Person person = optional.get();
+
 
         Map<String, Consumer<String>> setters = new HashMap<>();
         setters.put("identification", person::setIdentification);
