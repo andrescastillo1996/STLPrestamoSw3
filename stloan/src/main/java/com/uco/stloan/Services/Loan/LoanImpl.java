@@ -12,11 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 @Service
 public class LoanImpl implements LoanService{
@@ -35,6 +33,26 @@ public class LoanImpl implements LoanService{
     public Loan findById(Long id) {
         return loanRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFound("Loan with id:" + id + " not found"));
+    }
+
+
+
+    @Override
+    public List<Loan> finLoanStatus(int personUser,int articleID) {
+        List<Loan> loans = loanRepository.findAll();
+        List<Loan> loansFilter =  new ArrayList<>();
+        List<String> activeArticles = new ArrayList<>();
+
+        for (Loan loan : loans) {
+            if (loan.getPersonUser()==personUser ) {  // Filtrar por ID de usuario
+              loansFilter = loans.stream()
+                        .filter(x -> x.getArticle() == articleID)
+                        .collect(Collectors.toList());
+
+            }
+        }
+
+        return loansFilter;
     }
 
     @Override

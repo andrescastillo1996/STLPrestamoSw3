@@ -8,6 +8,7 @@ import java.util.List;
 public interface LoanService {
     public List<Loan> findAll();
     public Loan findById(Long id);
+    public List<Loan> finLoanStatus(int personUser,int articleID);
     public Loan save(Loan loan);
 
     public void deleteById(Long id);
