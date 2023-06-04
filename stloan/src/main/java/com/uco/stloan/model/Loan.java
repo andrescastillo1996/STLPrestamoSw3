@@ -10,7 +10,7 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
-@Table(name="LOANS")
+@Table(name="LOAN")
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
