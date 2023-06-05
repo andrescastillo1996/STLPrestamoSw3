@@ -1,5 +1,6 @@
 package com.uco.stloan.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,14 +36,14 @@ public class LoanDTO {
     private int qtyArticle;
 
     //@NotBlank
-    @DateTimeFormat
     @NotNull
-    private Date dateStart;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private String dateStart;
 
     //@NotBlank
-    @DateTimeFormat
     @NotNull
-    private Date dateEnd;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private String dateEnd;
 
     //@NotBlank
     @NotNull

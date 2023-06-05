@@ -1,5 +1,6 @@
 package com.uco.stloan.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,15 +31,17 @@ public class Loan {
     private int qtyArticle;
 
     @Column(name="dateStart")
-    private Date dateStart;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private String dateStart;
 
     @Column(name="dateEnd")
-    private Date dateEnd;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private String dateEnd;
 
     @Column(name="IsReturned")
     private Boolean isReturned;
 
-    public Loan(int personUser, int personMonitor, int article, int qtyArticle, Date dateStart, Date dateEnd, Boolean isReturned) {
+    public Loan(int personUser, int personMonitor, int article, int qtyArticle, String dateStart, String dateEnd, Boolean isReturned) {
         this.personUser = personUser;
         this.personMonitor = personMonitor;
         this.article = article;
